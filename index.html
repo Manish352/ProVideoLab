@@ -1,1 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Mastery - ₹999 Only! Limited Time Offer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Improved Header with Video Background */
+        header {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(78, 205, 196, 0.9));
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("/api/placeholder/1200/600") center/cover no-repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+        
+        header p {
+            font-size: 1.6em;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+        
+        .tagline {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #ffe066;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        /* Enhanced Offer Section */
+        .offer {
+            background: linear-gradient(135deg, #ffe066, #ffcc29);
+            text-align: center;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-20px);
+            animation: pulse 2s infinite;
+            position: relative;
+            border: 3px dashed #e63946;
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: #e63946;
+            color: white;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transform: rotate(15deg);
+            font-weight: 700;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        
+        .offer h2 {
+            color: #e63946;
+            font-size: 2.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .offer p {
+            font-size: 1.3em;
+            margin-top: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Improved Benefits Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.4em;
+            color: #1d3557;
+            margin: 50px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+        
+        .benefits {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 5px solid #457b9d;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 3em;
+            color: #457b9d;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            color: #1d3557;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        /* Course Content */
+        .course-content {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+        
+        .module-list {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .module {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .module:last-child {
+            border-bottom: none;
+        }
+        
+        .module h3 {
+            color: #1d3557;
+            display: flex;
+            align-items: center;
+            font-size: 1.3em;
+        }
+        
+        .module h3 i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .module p {
+            margin-top: 10px;
+            color: #555;
+            padding-left: 28px;
+        }
+        
+        /* Enhanced Testimonials */
+        .testimonials {
+            max-width: 1100px;
+            margin: 70px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            position: relative;
+            text-align: left;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5em;
+            color: rgba(78, 205, 196, 0.2);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #4ecdc4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1em;
+            color: #1d3557;
+            margin: 0;
+        }
+        
+        .author-info p {
+            font-size: 0.9em;
+            color: #555;
+            margin: 0;
+        }
+        
+        /* Improved FAQ Section */
+        .faq {
+            max-width: 900px;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+        
+        .faq-item {
+            margin: 20px 0;
+            text-align: left;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-size: 1.2em;
+            color: #1d3557;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #f5f8fa;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #555;
+            font-size: 1.1em;
+        }
+        
+        /* Enhanced CTA Section */
+        .cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("/api/placeholder/1200/600") center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .cta p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .price {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .price .original {
+            text-decoration: line-through;
+            color: #ff9999;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .price .discount {
+            color: #ffe066;
+            font-weight: 700;
+            font-size: 1.3em;
+            background: #e63946;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin: 10px 0;
+            display: inline-block;
+        }
+        
+        .price .final {
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            color: #ffe066;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        
+        .guarantee i {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        
+        .cta a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .buy-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.6em;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .buy-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .buy-button:hover {
+            background: #e63946;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(230, 57, 70, 0.5);
+        }
+        
+        .buy-button:hover::before {
+            left: 100%;
+        }
+        
+        .timer-container {
+            margin-top: 40px;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timer-title {
+            font-size: 1.3em;
+            color: #ffe066;
+            margin-bottom: 10px;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .timer-box {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+        
+        .timer-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .timer-label {
+            font-size: 0.8em;
+            color: #aaa;
+        }
+        
+        /* Bonus Section */
+        .bonus-section {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .bonus-title {
+            color: #e63946;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .bonus-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+        
+        .bonus-item {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border-left: 5px solid #4ecdc4;
+        }
+        
+        .bonus-item h4 {
+            color: #1d3557;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bonus-item h4 i {
+            margin-right: 10px;
+            color: #4ecdc4;
+        }
+        
+        .bonus-item p {
+            color: #555;
+        }
+        
+        /* Social Proof Section */
+        .social-proof {
+            background: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 70px 0;
+        }
+        
+        .social-proof h2 {
+            font-size: 2.2em;
+            color: #1d3557;
+            margin-bottom: 30px;
+        }
+        
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .logo-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 150px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .logo-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            color: #ffe066;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #ffe066;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #ffe066;
+            color: #1d3557;
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .floating-cta i {
+            margin-right: 10px;
+        }
+        
+        .floating-cta:hover {
+            background: #e63946;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(-20px); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateY(-20px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.02); }
+            100% { transform: translateY(-20px) scale(1); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+            header p {
+                font-size: 1.2em;
+            }
+            
+            .tagline {
+                font-size: 1.4em;
+            }
+            
+            .offer h2 {
+                font-size: 1.8em;
+            }
+            
+            .offer-badge {
+                width: 80px;
+                height: 80px;
+                font-size: 1em;
+                top: -15px;
+                right: -15px;
+            }
+            
+            .cta h2 {
+                font-size: 2em;
+            }
+            
+            .price .final {
+                font-size: 2em;
+            }
+            
+            .buy-button {
+                padding: 15px 40px;
+                font-size: 1.3em;
+            }
+            
+            .timer-box {
+                min-width: 60px;
+            }
+            
+            .timer-number {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Video Editing Mastery</h1>
+        <p>From Beginner to Pro in One Complete Course</p>
+        <div class="tagline">Learn Pro Skills & Launch Your Career!</div>
+    </header>
 
+    <!-- Unique Offer -->
+    <section class="offer">
+        <div class="offer-badge">EXCLUSIVE</div>
+        <h2>Market Mein Pehli Baar!</h2>
+        <p>Course kharido aur hum <strong>100 top influencers aur companies</strong> ko aapke talent ke baare mein email bhejenge!</p>
+        <p style="margin-top: 10px;">🔥 <strong>Apki Sabse Badi Career Growth Opportunity</strong> 🔥</p>
+    </section>
+
+    <!-- Benefits -->
+    <h2 class="section-title">Why Choose This Course?</h2>
+    <section class="benefits">
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-film"></i></div>
+            <h3>Pro Editing Skills</h3>
+            <p>Zero se pro tak – skills jo aapko industry mein standout banayengi. Real software, real techniques.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-infinity"></i></div>
+            <h3>Lifetime Access</h3>
+            <p>Ek baar pay karo, hamesha seekho – apne pace pe. Includes all future updates and additions!</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-project-diagram"></i></div>
+            <h3>Real Projects</h3>
+            <p>10+ hands-on projects with real-world clients. Build your portfolio while you learn!</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Industry Certificate</h3>
+            <p>Course khatam karo aur job-ready certificate lo jo aapke resume ko shine kare.</p>
+        </div>
+    </section>
+
+    <!-- Course Content Preview -->
+    <section class="course-content">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="module-list">
+            <div class="module">
+                <h3><i class="fas fa-play-circle"></i> Module 1: Video Editing Fundamentals</h3>
+                <p>Software setup, interface navigation, basic cuts and transitions.</p>
+            </div>
+            <div class="module">
+                <h3><i class="fas fa-play-circle"></i> Module 2: Advanced Editing Techniques</h3>
+                <p>Color grading, effects, motion graphics, and advanced transitions.</p>
+            </div>
+            <div class="module">
+                <h3><i class="fas fa-play-circle"></i> Module 3: Sound Design & Audio Editing</h3>
+                <p>Music selection, sound effects, voice-over editing, and audio mixing.</p>
+            </div>
+            <div class="module">
+                <h3><i class="fas fa-play-circle"></i> Module 4: Visual Effects & Motion Graphics</h3>
+                <p>Create stunning visual effects and professional motion graphics.</p>
+            </div>
+            <div class="module">
+                <h3><i class="fas fa-play-circle"></i> Module 5: Professional Workflow & Client Projects</h3>
+                <p>Real client briefs, project delivery, and professional workflow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+        <h2 class="bonus-title">FREE Bonuses (₹15,000+ Value!)</h2>
+        <p>Enroll today and get these exclusive bonuses absolutely FREE!</p>
+        <div class="bonus-list">
+            <div class="bonus-item">
+                <h4><i class="fas fa-gift"></i> Premium Effects Pack</h4>
+                <p>500+ premium transitions and effects worth ₹5,000</p>
+            </div>
+            <div class="bonus-item">
+                <h4><i class="fas fa-gift"></i> 1-on-1 Portfolio Review</h4>
+                <p>Personal feedback on your work from industry experts</p>
+            </div>
+            <div class="bonus-item">
+                <h4><i class="fas fa-gift"></i> Job-Ready Templates</h4>
+                <p>20+ professional project templates to kickstart your career</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p class="testimonial-content">"2 hafton mein pro editing seekh li – amazing course! Abhi main freelancing se monthly ₹50,000+ kama raha hoon!"</p>
+                <div class="testimonial-author">
+                    <div class="author-img">RK</div>
+                    <div class="author-info">
+                        <h4>Ravi Kumar</h4>
+                        <p>Freelance Video Editor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-content">"100 email offer ne mujhe ek bada project dilaya! Ab main full-time content creator hoon with 50K+ followers on Instagram."</p>
+                <div class="testimonial-author">
+                    <div class="author-img">PS</div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>YouTube Content Creator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-content">"Best investment I've ever made! 3 mahine pehle course complete kiya, aur aaj main ek top production house mein kaam kar raha hoon."</p>
+                <div class="testimonial-author">
+                    <div class="author-img">AJ</div>
+                    <div class="author-info">
+                        <h4>Amit Joshi</h4>
+                        <p>Professional Video Editor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <h2>Our Students Work With</h2>
+        <div class="company-logos">
+            <div class="logo-item">Company 1</div>
+            <div class="logo-item">Company 2</div>
+            <div class="logo-item">Company 3</div>
+            <div class="logo-item">Company 4</div>
+            <div class="logo-item">Company 5</div>
+            <div class="logo-item">Company 6</div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                Course kitne time ka hai?
+                <i class="fas fa-chevron-down"></i>
