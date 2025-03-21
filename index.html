@@ -19,6 +19,40 @@
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Red Rose Falling Animation */
+        .red-rose {
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background: url('https://www.pngall.com/wp-content/uploads/2016/05/Red-Rose-PNG-File.png') center/contain no-repeat;
+            animation: fall 4s linear forwards;
+            z-index: 1000;
+        }
+
+        @keyframes fall {
+            0% { top: -150px; opacity: 1; }
+            100% { top: 100vh; opacity: 0.5; }
+        }
+
+        /* Scrolling Red Rose */
+        .scrolling-rose {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: url('https://www.pngall.com/wp-content/uploads/2016/05/Red-Rose-PNG-File.png') center/contain no-repeat;
+            animation: scrollRose 10s linear infinite;
+            z-index: 999;
+        }
+
+        @keyframes scrollRose {
+            0% { top: -100px; left: 10%; }
+            100% { top: 100vh; left: 10%; }
         }
         
         /* Improved Header with Video Background */
@@ -29,7 +63,6 @@
             padding: 100px 20px;
             position: relative;
             animation: fadeIn 1s ease-in;
-            position: relative;
             overflow: hidden;
         }
         
@@ -40,7 +73,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("/api/placeholder/1200/600") center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1621330244235-2bea492fa1e8?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             opacity: 0.3;
             z-index: -1;
         }
@@ -184,6 +217,7 @@
             max-width: 1100px;
             margin: 70px auto;
             padding: 0 20px;
+            position: relative;
         }
         
         .module-list {
@@ -220,6 +254,24 @@
             padding-left: 28px;
         }
         
+        .course-preview-img {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .course-preview-img {
+                display: block;
+            }
+        }
+        
         /* Enhanced Testimonials */
         .testimonials {
             max-width: 1100px;
@@ -245,7 +297,7 @@
         }
         
         .testimonial-card::before {
-            content: """;
+            content: '"';
             position: absolute;
             top: 10px;
             left: 20px;
@@ -330,6 +382,11 @@
             padding: 0 20px 20px;
             color: #555;
             font-size: 1.1em;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
         }
         
         /* Enhanced CTA Section */
@@ -349,7 +406,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("/api/placeholder/1200/600") center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1507238699319-449264ddea6b?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -405,7 +462,7 @@
         }
         
         .price .final {
-            color: #fff;
+            color: #00f;
             font-size: 2.5em;
             font-weight: 800;
             display: block;
@@ -508,8 +565,8 @@
             color: #aaa;
         }
         
-        /* Bonus Section */
-        .bonus-section {
+        /* Discount Offer Section */
+        .discount-offer {
             max-width: 1100px;
             margin: 70px auto;
             padding: 30px 20px;
@@ -519,43 +576,81 @@
             text-align: center;
         }
         
-        .bonus-title {
-            color: #e63946;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-        
-        .bonus-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-            padding: 0 20px;
-        }
-        
-        .bonus-item {
-            padding: 20px;
-            background: #f9f9f9;
+        .discount-offer .price {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 20px 40px;
             border-radius: 10px;
-            border-left: 5px solid #4ecdc4;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .bonus-item h4 {
-            color: #1d3557;
+        .discount-offer .price .original {
+            text-decoration: line-through;
+            color: #ff9999;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .discount-offer .price .discount {
+            color: #ffe066;
+            font-weight: 700;
             font-size: 1.3em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #e63946;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin: 10px 0;
+            display: inline-block;
         }
         
-        .bonus-item h4 i {
-            margin-right: 10px;
-            color: #4ecdc4;
+        .discount-offer .price .final {
+            color: #00f;
+            font-size: 2.5em;
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
-        .bonus-item p {
-            color: #555;
+        .buy-now-btn {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.4em;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-left: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .buy-now-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .buy-now-btn:hover {
+            background: #ff6b6b;
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+        }
+        
+        .buy-now-btn:hover::before {
+            left: 100%;
         }
         
         /* Social Proof Section */
@@ -677,6 +772,7 @@
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
         }
         
         /* Floating CTA */
@@ -770,10 +866,22 @@
             .timer-number {
                 font-size: 1.5em;
             }
+            
+            .buy-now-btn {
+                padding: 10px 20px;
+                font-size: 1.2em;
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Red Rose Falling Element -->
+    <div class="red-rose"></div>
+
+    <!-- Scrolling Red Rose -->
+    <div class="scrolling-rose"></div>
+
     <!-- Header -->
     <header>
         <h1>Video Editing Mastery</h1>
@@ -819,44 +927,54 @@
         <h2 class="section-title">What You'll Learn</h2>
         <div class="module-list">
             <div class="module">
-                <h3><i class="fas fa-play-circle"></i> Module 1: Video Editing Fundamentals</h3>
-                <p>Software setup, interface navigation, basic cuts and transitions.</p>
+                <h3><i class="fas fa-play-circle"></i> Module 1: KineMaster Basics for Beginners</h3>
+                <p>Install KineMaster, explore the app, and master basic cuts and transitions on your phone.</p>
             </div>
             <div class="module">
-                <h3><i class="fas fa-play-circle"></i> Module 2: Advanced Editing Techniques</h3>
-                <p>Color grading, effects, motion graphics, and advanced transitions.</p>
+                <h3><i class="fas fa-play-circle"></i> Module 2: Instagram Reels Editing Pro</h3>
+                <p>Create viral Reels with effects, text overlays, and trending transitions using KineMaster.</p>
             </div>
             <div class="module">
-                <h3><i class="fas fa-play-circle"></i> Module 3: Sound Design & Audio Editing</h3>
-                <p>Music selection, sound effects, voice-over editing, and audio mixing.</p>
+                <h3><i class="fas fa-play-circle"></i> Module 3: YouTube Shorts Professional</h3>
+                <p>Edit engaging Shorts with sound effects, music, and quick cuts to grow your channel fast.</p>
             </div>
             <div class="module">
-                <h3><i class="fas fa-play-circle"></i> Module 4: Visual Effects & Motion Graphics</h3>
-                <p>Create stunning visual effects and professional motion graphics.</p>
+                <h3><i class="fas fa-play-circle"></i> Module 4: Mobile Effects & Animation</h3>
+                <p>Add cool effects, stickers, and animations to your videos right from your mobile.</p>
             </div>
             <div class="module">
-                <h3><i class="fas fa-play-circle"></i> Module 5: Professional Workflow & Client Projects</h3>
-                <p>Real client briefs, project delivery, and professional workflow.</p>
+                <h3><i class="fas fa-play-circle"></i> Module 5: Social Media Growth Hacks</h3>
+                <p>Learn editing tricks and workflows to boost views and followers on Instagram and YouTube.</p>
             </div>
         </div>
+        <img src="https://images.unsplash.com/photo-1611162617213-7d15d7508e97?q=80&w=2070&auto=format&fit=crop" alt="Video Editing Preview" class="course-preview-img">
     </section>
 
-    <!-- Bonus Section -->
-    <section class="bonus-section">
-        <h2 class="bonus-title">FREE Bonuses (₹15,000+ Value!)</h2>
-        <p>Enroll today and get these exclusive bonuses absolutely FREE!</p>
-        <div class="bonus-list">
-            <div class="bonus-item">
-                <h4><i class="fas fa-gift"></i> Premium Effects Pack</h4>
-                <p>500+ premium transitions and effects worth ₹5,000</p>
+    <!-- Discount Offer Section with Buy Now Button and Timer -->
+    <section class="discount-offer">
+        <div class="price" style="display: inline-flex; align-items: center;">
+            <div>
+                <span class="original">₹4999</span>
+                <span class="discount">80% OFF</span>
+                <span class="final">₹999</span>
             </div>
-            <div class="bonus-item">
-                <h4><i class="fas fa-gift"></i> 1-on-1 Portfolio Review</h4>
-                <p>Personal feedback on your work from industry experts</p>
-            </div>
-            <div class="bonus-item">
-                <h4><i class="fas fa-gift"></i> Job-Ready Templates</h4>
-                <p>20+ professional project templates to kickstart your career</p>
+            <a href="https://rzp.io/rzp/KPMdBdBh" class="buy-now-btn">Buy Now</a>
+        </div>
+        <div class="timer-container">
+            <div class="timer-title">Offer Ends In:</div>
+            <div class="timer">
+                <div class="timer-box">
+                    <span class="timer-number" id="hours">23</span>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-box">
+                    <span class="timer-number" id="minutes">59</span>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-box">
+                    <span class="timer-number" id="seconds">59</span>
+                    <div class="timer-label">Seconds</div>
+                </div>
             </div>
         </div>
     </section>
@@ -876,12 +994,12 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-content">"100 email offer ne mujhe ek bada project dilaya! Ab main full-time content creator hoon with 50K+ followers on Instagram."</p>
+                <p class="testimonial-content">"100 email offer ne mujhe ek bada project dilaya! Ab main full-time Instagram content creator hoon with 50K+ followers."</p>
                 <div class="testimonial-author">
                     <div class="author-img">PS</div>
                     <div class="author-info">
                         <h4>Priya Sharma</h4>
-                        <p>YouTube Content Creator</p>
+                        <p>Instagram Content Creator</p>
                     </div>
                 </div>
             </div>
@@ -902,12 +1020,10 @@
     <section class="social-proof">
         <h2>Our Students Work With</h2>
         <div class="company-logos">
-            <div class="logo-item">Company 1</div>
-            <div class="logo-item">Company 2</div>
-            <div class="logo-item">Company 3</div>
-            <div class="logo-item">Company 4</div>
-            <div class="logo-item">Company 5</div>
-            <div class="logo-item">Company 6</div>
+            <div class="logo-item">Technical Guruji</div>
+            <div class="logo-item">Ishu Punjaban</div>
+            <div class="logo-item">Rahul Ji</div>
+            <div class="logo-item">Sourav Joshi</div>
         </div>
     </section>
 
@@ -918,3 +1034,120 @@
             <div class="faq-question">
                 Course kitne time ka hai?
                 <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yeh course 6 weeks ka hai, lekin aap apne pace pe complete kar sakte ho kyunki lifetime access milta hai!
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Kya mujhe laptop chahiye?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Nahi! Yeh course mobile pe KineMaster ke saath designed hai – bas ek smartphone chahiye. Jinke paas laptop hai, unke liye bhi option hai – Adobe Premiere Pro ka course bhi included hai, yeh sab ₹999 mein ek saath milega, mobile aur laptop dono users ke benefit ke liye!
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                Kya certificate milega?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Haan, course complete karne pe ek industry-recognized certificate milega jo aapke career mein help karega.
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Master Video Editing?</h2>
+            <p>Don’t miss out on this limited-time offer! Join thousands of students who’ve transformed their skills and careers.</p>
+            <div class="price">
+                <span class="original">₹4999</span>
+                <span class="discount">80% OFF</span>
+                <span class="final">₹999</span>
+            </div>
+            <div class="guarantee">
+                <i class="fas fa-shield-alt"></i> 3-Day Money-Back Guarantee
+            </div>
+            <a href="https://rzp.io/rzp/KPMdBdBh" class="buy-button">Enroll Now!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We’re passionate about empowering creators with top-notch video editing skills to succeed in the digital world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Course Details</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Video Editing Mastery | All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://rzp.io/rzp/KPMdBdBh" class="floating-cta">
+        <i class="fas fa-shopping-cart"></i> Get Started
+    </a>
+
+    <!-- JavaScript for Countdown Timer and FAQ Toggle -->
+    <script>
+        // Countdown Timer
+        function startTimer() {
+            let timeLeft = 24 * 60 * 60 - 1; // 24 hours in seconds minus 1 to start at 23:59:59
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            const timer = setInterval(() => {
+                if (timeLeft >= 0) {
+                    const hours = Math.floor(timeLeft / 3600);
+                    const minutes = Math.floor((timeLeft % 3600) / 60);
+                    const seconds = timeLeft % 60;
+
+                    hoursEl.textContent = String(hours).padStart(2, '0');
+                    minutesEl.textContent = String(minutes).padStart(2, '0');
+                    secondsEl.textContent = String(seconds).padStart(2, '0');
+
+                    timeLeft--;
+                } else {
+                    clearInterval(timer);
+                    hoursEl.textContent = '00';
+                    minutesEl.textContent = '00';
+                    secondsEl.textContent = '00';
+                }
+            }, 1000);
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        window.onload = startTimer;
+    </script>
+</body>
+</html>
